@@ -1,7 +1,7 @@
 [server]
 host: 0.0.0.0
 port: 7125
-klippy_uds_address: /home/biqu/printer_data/comms/klippy.sock
+klippy_uds_address: /home/wilsonm/printer_data/comms/klippy.sock
 
 [authorization]
 trusted_clients:
@@ -30,7 +30,7 @@ channel: dev
 refresh_interval: 168
 
 [update_manager mainsail]
-path: /home/biqu/mainsail
+path: /home/wilsonm/mainsail
 repo: mainsail-crew/mainsail
 channel: stable
 type: web
@@ -38,12 +38,21 @@ type: web
 [update_manager mainsail-config]
 managed_services: klipper
 origin: https://github.com/mainsail-crew/mainsail-config.git
-path: /home/biqu/mainsail-config
+path: /home/wilsonm/mainsail-config
 primary_branch: master
 type: git_repo
 
 [update_manager fluidd]
-path: /home/biqu/fluidd
+path: /home/wilsonm/fluidd
 repo: fluidd-core/fluidd
 channel: stable
 type: web
+
+[update_manager KlipperScreen]
+install_script: /home/wilsonm/KlipperScreen/scripts/KlipperScreen-install.sh
+requirements: /home/wilsonm/KlipperScreen/scripts/KlipperScreen-requirements.txt
+env: /home/wilsonm/.KlipperScreen-env/bin/python
+managed_services: KlipperScreen
+origin: https://github.com/KlipperScreen/KlipperScreen.git
+path: /home/wilsonm/KlipperScreen
+type: git_repo
